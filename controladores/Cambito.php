@@ -37,6 +37,9 @@ Class Cambito {
     public function cModificarAmbito() {
         session_start();
         $this->vista = 'listar_ambitos';
+        if (empty($_POST['nombre'])) {
+            return "Faltan datos obligatorios";
+        }
         $nombre = $_POST['nombre'];
         $resultado = $this->objambito->mModificarAmbito($nombre);
         return $resultado;

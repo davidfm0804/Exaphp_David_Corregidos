@@ -8,10 +8,10 @@ class Cminijuego {
     }
 
     public function cInsertarMinijuego() {
+        $this->vista = 'listar_ambitos';
         if (empty($_POST['nombre']) || !isset($_POST['ambitos'])|| !isset($_POST['etapas'])) {
             return "Faltan datos obligatorios";
         }
-        $this->vista = 'listar_ambitos';
         $nombre = $_POST['nombre'];
         $idambito = $_POST['ambitos'];
         $etapas = $_POST['etapas'];
